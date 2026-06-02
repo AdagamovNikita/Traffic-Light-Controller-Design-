@@ -1,41 +1,26 @@
-# Traffic Light Controller Design (Разработка контроллера светофора)
+# Traffic Light Controller Design
 
-Этот проект представляет собой аппаратную модель и симуляцию интеллектуального контроллера светофора для регулирования движения на перекрестке с поддержкой пешеходного перехода по требованию. Проект выполнен и протестирован в программе **Logisim**.
+A Logisim-based digital circuit design for an intelligent traffic light controller. The system manages traffic flow at a two-way intersection and handles pedestrian crossing requests using a Finite State Machine (FSM).
 
-## 📌 Суть проекта
+## Project Overview
 
-В основе системы лежит **конечный автомат (FSM - Finite State Machine)**, который управляет переключением сигналов светофора для двух пересекающихся направлений:
-1. **Север-Юг (NS)**
-2. **Восток-Запад (EW)**
+The controller regulates traffic at the intersection of North-South (NS) and East-West (EW) roads, incorporating a pedestrian crossing cycle triggered by a push button.
 
-А также контролирует пешеходный переход (**Pedestrian Crossing**) с помощью кнопки вызова.
+### Key Components
+* **FSM State Memory:** A subcircuit that determines the next state based on the current state, a timer counter, and the pedestrian request button latch.
+* **Output Logic:** A combinational logic subcircuit that decodes the active state into signals for the traffic lights (Red, Yellow, Green) and the pedestrian walk indicator.
+* **Controller Implementation:** Built using D Flip-Flops for state registers, a 4-bit counter for timing states, and basic logic gates.
 
-### Основные функции и особенности:
-* **Управление фазами:** Последовательное переключение сигналов светофора (Зеленый 🟢 -> Желтый 🟡 -> Красный 🔴).
-* **Пешеходный переход по требованию:** Система реагирует на нажатие кнопки пешехода, переключая автомобильные светофоры в красный режим и разрешая переход пешеходам (сигнал `Ped_W`).
-* **Модульная архитектура:** Схема разделена на логические блоки:
-  * **StateMemory** (Память состояний): определяет следующее состояние автомата на основе текущего состояния и входных сигналов (таймер, кнопка пешехода).
-  * **OutputLogic** (Выходная логика): преобразует текущее состояние автомата в управляющие сигналы для светодиодов (светофоров).
-* **Аппаратные компоненты:** Реализовано на D-триггерах (D Flip-Flops), счетчиках, компараторах и базовых логических вентилях.
+## Repository Contents
 
----
+* **comp1_design.circ:** The Logisim circuit file containing the main simulation, `StateMemory`, and `OutputLogic` subcircuits.
+* **Traffic Light Controller Design.pptx:** Presentation slides detail the state diagram, state transition tables, truth tables, and Boolean equations.
+* **20-13-26.mp4:** A screen recording demonstrating the simulation run, showing the cycle transition and pedestrian request handling.
 
-## 📂 Структура проекта
+## Running the Simulation
 
-* 📁 **`comp1_design.circ`** — основной файл схемы Logisim. Внутри содержатся субсхемы `main`, `StateMemory` и `OutputLogic`.
-* 📁 **`Traffic Light Controller Design.pptx`** — презентация проекта, содержащая:
-  * Граф состояний автомата (State Diagram).
-  * Таблицу переходов и истинности.
-  * Логические уравнения для памяти состояний и выходов.
-* 📁 **`20-13-26.mp4`** — видеозапись работы симуляции, демонстрирующая правильность функционирования всех циклов и обработку запроса пешехода.
-
----
-
-## 🚀 Как запустить симуляцию
-
-1. Установите эмулятор цифровых схем [Logisim](http://www.cburch.com/logisim/).
-2. Скачайте и откройте файл `comp1_design.circ` в Logisim.
-3. Чтобы запустить симуляцию:
-   * Выберите инструмент **Poke Tool** (рука 👆) для взаимодействия с кнопкой пешехода.
-   * Для автоматического тактирования перейдите в меню **Simulation -> Ticks Enabled** (или нажмите `Ctrl + K`).
-   * Настройте частоту тактов в **Simulation -> Tick Frequency** (рекомендуется 4.1 Hz или выше).
+To run and test the circuit:
+1. Open `comp1_design.circ` in [Logisim](http://www.cburch.com/logisim/).
+2. Enable automatic clock ticks by selecting **Simulation > Ticks Enabled** (Ctrl + K) in the menu.
+3. Use the **Poke Tool** (hand icon) to press the pedestrian button and trigger the crossing cycle.
+4. Adjust simulation speed if needed under **Simulation > Tick Frequency**.
