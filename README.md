@@ -11,6 +11,22 @@ The controller regulates traffic at the intersection of North-South and East-Wes
 * **Output Logic:** A combinational logic subcircuit that decodes the active state into signals for the traffic lights(Red, Yellow, Green) and the pedestrian walk indicator.
 * **Controller Implementation:** Built using D Flip-Flops for state registers, a 4-bit counter for timing states, and basic logic gates.
 
+<img width="932" height="752" alt="image" src="https://github.com/user-attachments/assets/1bf0800d-ab8a-4583-927b-50e83ab93b5a" />
+
+<img width="598" height="847" alt="image" src="https://github.com/user-attachments/assets/14dafb13-63b4-43b3-9540-9cda51e62a2e" />
+
+<img width="502" height="812" alt="image" src="https://github.com/user-attachments/assets/01be9793-ab4e-47e4-9450-c8d7a1981a92" />
+
+<img width="1228" height="780" alt="image" src="https://github.com/user-attachments/assets/508782c1-be74-4c03-b2be-797829d742ad" />
+
+<img width="1117" height="697" alt="image" src="https://github.com/user-attachments/assets/8e9f27a7-04a6-402d-b005-a8eb74d4dc60" />
+
+<img width="1178" height="725" alt="image" src="https://github.com/user-attachments/assets/b7aaea72-1b05-411e-b509-fca32c4a8ea1" />
+
+<img width="1311" height="802" alt="image" src="https://github.com/user-attachments/assets/3b694727-966b-4a7e-b483-2181941f701b" />
+
+<img width="1206" height="752" alt="image" src="https://github.com/user-attachments/assets/f49c6968-4800-4b55-8be6-ba25cfa60ec7" />
+
 # Circuit Components
 
 ### 1. Three D Flip-Flops(FF2, FF1, FF0)
