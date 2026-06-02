@@ -11,8 +11,6 @@ The controller regulates traffic at the intersection of North-South and East-Wes
 * **Output Logic:** A combinational logic subcircuit that decodes the active state into signals for the traffic lights(Red, Yellow, Green) and the pedestrian walk indicator.
 * **Controller Implementation:** Built using D Flip-Flops for state registers, a 4-bit counter for timing states, and basic logic gates.
 
-<img width="932" height="752" alt="image" src="https://github.com/user-attachments/assets/1bf0800d-ab8a-4583-927b-50e83ab93b5a" />
-
 <img width="598" height="847" alt="image" src="https://github.com/user-attachments/assets/14dafb13-63b4-43b3-9540-9cda51e62a2e" />
 
 <img width="502" height="812" alt="image" src="https://github.com/user-attachments/assets/01be9793-ab4e-47e4-9450-c8d7a1981a92" />
